@@ -44,6 +44,46 @@ while (list($key, $val) = each($people))
 	echo "$key => $val<br />";
 }
 
+if(!filter_has_var(INPUT_GET, "name"))
+{
+	echo("Input type does not exist");
+}
+else
+{
+	echo("Input type exists");
+}
+
+echo("<br/>================ <br/><br/>");
+
+
+$x=9;
+switch ($x)
+{
+	case 1:
+		echo "Number 1";
+		break;
+		
+	case 2:
+		echo "Number 2";
+		break;
+		
+	case 3:
+		echo "Number 3";
+		break;
+		
+	default:
+		echo "No number between 1 and 3";
+}
+
+echo("<br/>================ <br/><br/>");
+
+$i=1;
+while($i<=3)
+{
+	echo "The number is " . $i . "<br />";
+	$i++;
+}
+
 ?>
 
 </body>
