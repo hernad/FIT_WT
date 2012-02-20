@@ -39,6 +39,7 @@ kraj $i. ";
             jQuery("#mainForm").validationEngine();
         });
 
+        
         tinyMCE.init({
                 // General options
                 mode : "textareas",
@@ -57,6 +58,7 @@ kraj $i. ";
 
                 // Skin options
                 skin : "o2k7",
+                
                 skin_variant : "silver",
 
                 // Example content CSS (should be your site CSS)
@@ -70,7 +72,7 @@ kraj $i. ";
 
                 // Replace values for the template plugin
                 template_replace_values : {
-                        username : "Some User",
+                        username : "hernad",
                         staffid : "991234"
                 }
         });
@@ -84,8 +86,8 @@ kraj $i. ";
 
 
 
-<form method="post" action="somepage">
-        <textarea name="content" style="width:100%"></textarea>
+<form method="post" action="process_1.php">
+        <textarea name="content1" style="width:100%"></textarea>
 </form>
 
 
