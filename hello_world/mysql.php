@@ -20,7 +20,7 @@ echo print_r($result);
 echo "<br><br>";
 
 
-echo "query vratio redova "  . $result->num_rows;
+echo "query vratio zapisa: "  . $result->num_rows;
 
 
 echo "<br><br>";
