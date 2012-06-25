@@ -15,6 +15,16 @@ $result = $mysqli->query($qry);
 
 echo "<br><br>";
 
+echo print_r($result);
+
+echo "<br><br>";
+
+
+echo "query vratio redova "  . $result->num_rows;
+
+
+echo "<br><br>";
+
 while ($row = $result->fetch_object()) {
    	
 	echo $row->naziv . " ; "  . $row->naziv_2;
