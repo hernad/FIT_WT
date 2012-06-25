@@ -63,3 +63,59 @@ mysql> insert into sifre(naz) values('bakir');
 ERROR 1062 (23000): Duplicate entry 'bakir' for key 'naz'
 
 
+===============================================================
+ALTER TABLE - create index, foreign key
+==============================================================
+
+mysql> show create table t1b;
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table | Create Table                                                                                                                                                                                                |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| t1b   | CREATE TABLE `t1b` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `naz` varchar(100) DEFAULT NULL,
+  `id_t2b` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 |
++-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> create index idx1 on t1b(id_t2b);
+Query OK, 1 row affected (0.15 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+
+// referenciraj polje id_t2b u tabeli t1b  na tabelu t2b i njen PK id
+
+mysql> alter table t1b add foreign key (id_t2b) references t2b(id);
+Query OK, 1 row affected (0.14 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> insert into t1b(naz, id_t2b) values('au55', 1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into t1b(naz, id_t2b) values('au55', 77);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`wt0`.`t1b`, CONSTRAINT `t1b_ibfk_1` FOREIGN KEY (`id_t2b`) REFERENCES `t2b` (`id`))
+mysql> show create table t1b;
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table | Create Table                                                                                                                                                                                                                                                                                                   |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| t1b   | CREATE TABLE `t1b` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `naz` varchar(100) DEFAULT NULL,
+  `id_t2b` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx1` (`id_t2b`),
+  CONSTRAINT `t1b_ibfk_1` FOREIGN KEY (`id_t2b`) REFERENCES `t2b` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+
+------------------------------------------------
+CREATE TABLE engine=innodb, charset=utf8
+------------------------------------------------
+
+create table t2b (id int(10) auto_increment primary key, naz varchar(100)) 
+engine=innodb charset=utf8;
+
