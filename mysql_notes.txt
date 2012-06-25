@@ -1,0 +1,65 @@
+hernad@macan:/Applications/XAMPP/xamppfiles$  bin/mysql -u root -p
+
+mysql> create database wt0;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use wt0;
+Database changed
+mysql> create table autori(id integer unsigned not null auto_increment primary key, naziv varchar(200), naziv_2 text);
+Query OK, 0 rows affected (0.16 sec)
+
+mysql> use wt0;
+Database changed
+mysql> select * from autori;
+Empty set (0.00 sec)
+
+mysql> insert into autori(naziv, naziv_2) values('jedan', 'jedan i po');
+Query OK, 1 row affected (0.34 sec)
+
+mysql> select * from autori;
++----+-------+------------+
+| id | naziv | naziv_2    |
++----+-------+------------+
+|  1 | jedan | jedan i po |
++----+-------+------------+
+1 row in set (0.00 sec)
+
+-----------------------------------------------------------------
+ALTER, modify column, auto_increment
+------------------------------------------------------------------
+
+
+u sifre/id nije bio setovan auto_increment
+
+mysql> alter table sifre modify column id int(4) auto_increment;
+Query OK, 1 row affected (0.14 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> describe sifre;
++-------+------------------+------+-----+---------+----------------+
+| Field | Type             | Null | Key | Default | Extra          |
++-------+------------------+------+-----+---------+----------------+
+| id    | int(4)           | NO   | PRI | NULL    | auto_increment |
+| naz   | text             | YES  |     | NULL    |                |
+| i2    | int(10) unsigned | YES  |     | NULL    |                |
++-------+------------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into sifre(naz) values('bakir');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into sifre(naz) values('fadfa');
+Query OK, 1 row affected (0.00 sec)
+
+----------
+UNIQUE
+-----------
+
+mysql> alter table sifre modify column naz varchar(200) unique;
+Query OK, 3 rows affected (0.14 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> insert into sifre(naz) values('bakir');
+ERROR 1062 (23000): Duplicate entry 'bakir' for key 'naz'
+
+
