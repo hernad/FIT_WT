@@ -14,4 +14,10 @@ function str_isset_and_not_empty() {
 	
 }
 
+function injection_protection($var) {
+
+  // http://www.php.net/manual/en/mysqli.real-escape-string.php	
+  return htmlentities($var);
+  
+}
 ?>

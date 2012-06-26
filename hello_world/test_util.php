@@ -41,4 +41,20 @@ if  (str_isset_and_not_empty($v1, $v2, $v3)) {
 	echo "v3 je empty";
 }
 
+echo "<br/><br/>Test 4:<br/>";
+
+$var = "ja sam benigan";
+
+echo '<br/>prije zastite: ' . $var . "<br/> nakon zastite " . injection_protection($var);
+
+
+$var = "ja imam html code <iframe>vakonako></iframe>";
+echo '<br/>prije zastite: ' . $var . "<br/> nakon zastite " . injection_protection($var);
+
+
+$var = "DELETE from autori";
+echo '<br/>prije zastite: ' . $var . "<br/> nakon zastite " . injection_protection($var);
+
+
+
 ?>

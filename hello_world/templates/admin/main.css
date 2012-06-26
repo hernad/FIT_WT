@@ -1,0 +1,13 @@
+*
+{
+    margin:0;
+    padding:0;
+}
+
+body 
+{
+    font-family:Tahoma;
+    font-family:12px;
+    color:#000000;
+    background: url('images/bg.png') repeat #FFFFFF;
+}
