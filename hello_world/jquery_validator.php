@@ -173,12 +173,25 @@ function trazi(input_txt)
    //var sel = document.getElementById("select_1");
    //rez += sel.options[sel.selectedIndex].value;
    
-   
+   $.post('get_search_data.php', 
+		  {kat_id: $('#select_txt').attr('value'), txt_search: $('#select_1 option:selected').attr('id') },
+          function(output) {
+	          $('#rezultat').hide(); 
+	          $('#rezultat').html(output).show().fadeIn(1000);
+	      }
+		  );
+		  
    alert(rez);
    
 }
 
 </script>
+
+<hr/>
+<br/>
+Rezultat je:</br> 
+<div id="rezultat">
+</div>
 
 </body>
 	
