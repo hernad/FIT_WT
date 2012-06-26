@@ -174,14 +174,15 @@ function trazi(input_txt)
    //rez += sel.options[sel.selectedIndex].value;
    
    $.post('get_search_data.php', 
-		  {kat_id: $('#select_txt').attr('value'), txt_search: $('#select_1 option:selected').attr('id') },
+		  {txt_search: $('#select_txt').attr('value'), kat_id: $('#select_1 option:selected').attr('id') },
           function(output) {
-	          $('#rezultat').hide(); 
-	          $('#rezultat').html(output).show().fadeIn(1000);
+	          //$('#rezultat').hide(); 
+	          $('#rezultat').html(output).show();
+	          //.fadeIn(1000);
 	      }
 		  );
 		  
-   alert(rez);
+   //alert(rez);
    
 }
 

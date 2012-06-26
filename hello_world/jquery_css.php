@@ -45,7 +45,13 @@ $("div").click(
   $("#result").html("That div is <span style='color:"  + color + ";background-color:" + 
 		  ((color == "rgb(255, 255, 255)") ? "seagreen" : "rgb(255, 255, 255)") + "';'>" + 
 		  color + "</span>.");
- }
+ 
+
+   alert("pao mi mrak !");
+   $(this).css("background-color", "black");
+
+  }
+ 
 );
 
 </script>
