@@ -13,7 +13,7 @@ ul#my_ul {
   width: 400px; 
   height: 60px;
   border: medium solid maroon;
-  border-radius: 2%;
+  border-radius: 5px;
   padding: 15px;
   margin: 30px;
   
@@ -66,9 +66,9 @@ list-style-type: none;
 
 <p>bla bla bla bal vajdklsfad sčklfadjs lčfadjs fčadsjf čadslfj adlsčfjads fčadsj fčldsfj čalskdfj adsčlfj asdčfjasd fčladsj fasčdfj asdfj asdfčdjsfa</p>
 <ul id="my_ul">
-<li id="prvi">jedan: <input type="text" id="txt_1" style="width: 150px;"></input>
+<li id="prvi">jedan: <input type="text" id="txt_1" style="border-radius: 12px 4px; width: 150px;"></input>
 </li>
-<li id="drugi">dva</li>
+<li id="drugi">dva <a href="http://www.css3.info/preview/rounded-border/">bourder-radius css3</a></li>
 <li id="treci">tri</li>
 </ul>
 <p>kraj bla bla bal vajdklsfad sčklfadjs lčfadjs fčadsjf čadslfj adlsčfjads fčadsj fčldsfj čalskdfj adsčlfj asdčfjasd fčladsj fasčdfj asdfj asdfčdjsfa</p>
