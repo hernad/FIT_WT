@@ -121,17 +121,64 @@ if (!isset($_GET["ime"])) {
 
 <textarea id="ta_komentar" onchange="set_komentar_val();" ></textarea>
 
-<input type="submit" name="salji" value="Pošalji sa hidden"></input>
+
 
 <!--  
 <input type="button" id="btn1" name="btn1" value="dugme 1" onClick="alert('sta hoces ?');" ></input>
 -->
 
+<input type="submit" name="salji" value="Pošalji sa hidden"></input>
+
+
 </fieldset>
 
 </form>
+</br>
+<hr/>
 
+<select id="select_1" name="select_1">
+ <optgroup label="grupa 1">
+  <option id="1" value="jedan">opcija jedan</option>
+  <option id="2" value="dva">opcija dva</option>
+ </optgroup> 
+</select>
 
+<!--
+http://stackoverflow.com/questions/1085801/how-to-get-the-selected-value-of-dropdownlist-using-javascript
+
+var e = document.getElementById("select_1");
+var dd = e.options[e.selectedIndex].value;
+                    
+-->
+
+<input type="text" name="select_txt" id="select_txt" ></input>
+
+<label id="lbl_1" for="select_txt" onclick="trazi(this);" >Traži po imenu</label>
+
+<script>
+
+function trazi(input_txt)
+{
+   	
+   var rez;
+
+   rez = '';
+   
+   rez = 'txt unesen = ' + $('#select_txt').attr('value');
+
+   rez += ' '
+
+   rez += 'selection box id= ' + $('#select_1 option:selected').attr('id');
+
+   //var sel = document.getElementById("select_1");
+   //rez += sel.options[sel.selectedIndex].value;
+   
+   
+   alert(rez);
+   
+}
+
+</script>
 
 </body>
 	

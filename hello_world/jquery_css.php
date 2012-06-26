@@ -40,9 +40,11 @@ $("div").click(
   function() {
 	
   var color = $(this).css("background-color");
-  alert("'color:"  + color + ";background-color:" + ((color == "rgb(255, 255, 255)") ? "rgb(0, 0, 0)" : "rgb(255, 255, 255)") + "';'>" + color + "</span>.");
+  //alert("'color:"  + color + ";background-color:" + ((color == "rgb(255, 255, 255)") ? "rgb(0, 0, 0)" : "rgb(255, 255, 255)") + "';'>" + color + "</span>.");
   
-  $("#result").html("That div is <span style='color:"  + color + ";background-color:" + ((color == "rgb(255, 255, 255)") ? "rgb(0, 0, 0)" : "rgb(255, 255, 255)") + "';'>" + color + "</span>.");
+  $("#result").html("That div is <span style='color:"  + color + ";background-color:" + 
+		  ((color == "rgb(255, 255, 255)") ? "seagreen" : "rgb(255, 255, 255)") + "';'>" + 
+		  color + "</span>.");
  }
 );
 
