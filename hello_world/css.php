@@ -10,7 +10,7 @@
 
 ul#my_ul {
   position: relative;
-  width: 400px; 
+  width: 550px; 
   height: 60px;
   border: medium solid maroon;
   border-radius: 5px;
@@ -19,12 +19,19 @@ ul#my_ul {
   
 }
 
+ul#my_ul li{
+  float: left;
+}
+
 li#prvi {
-  position: absolute;
+  /*position: absolute;*/
   margin: 5px;
+  /*
   left: 10px;
+  */
   padding-top: 3px;
   padding-left: 3px;
+  padding: 10px;
   width: 200px;
   height: 28px;
   border: thin solid black;
@@ -32,21 +39,25 @@ li#prvi {
 
 li#drugi {
   margin: 5px;
-  position: absolute;
+  /* position: absolute; */
   padding-top: 3px;
   padding-left: 3px;
-  left: 220px;
-  width: 60px;
+  /* left: 220px; */
+  padding: 10px;
+  
+  width: 160px;
   height: 28px;
   border: thin solid red;
 }
 
 li#treci {
-  position: absolute;
+  /* position: absolute; */
   margin: 5px;
   padding-top: 3px;
   padding-left: 3px;
-  left: 290px;
+  padding: 10px;
+  
+  /* left: 290px; */
   width: 50px;
   border: thin solid green;
   height: 28px;
@@ -55,7 +66,10 @@ li {
 list-style-type: none;
 }
 
-
+.clear {
+   clear: both;
+   display: none;
+}
 
 </style>
 
@@ -71,6 +85,7 @@ list-style-type: none;
 <li id="drugi">dva <a href="http://www.css3.info/preview/rounded-border/">bourder-radius css3</a></li>
 <li id="treci">tri</li>
 </ul>
+<br class="clear" />
 <p>kraj bla bla bal vajdklsfad sčklfadjs lčfadjs fčadsjf čadslfj adlsčfjads fčadsj fčldsfj čalskdfj adsčlfj asdčfjasd fčladsj fasčdfj asdfj asdfčdjsfa</p>
 
 
