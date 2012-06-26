@@ -33,7 +33,19 @@ if (isset($_GET['ime'])) {
 
 <script type="text/javascript"  src="scripts/tiny_mce/tiny_mce_init.js"></script>
 
+<style type="text/css">
 
+.input_field {
+   font-weight: normal;
+}
+
+.input_field:focus {
+  font-weight: bold;
+  background-color: orange;
+}
+
+
+</style>
 
 <script type="text/javascript">
 

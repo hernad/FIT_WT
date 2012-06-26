@@ -50,6 +50,14 @@ $("div").click(
    alert("pao mi mrak !");
    $(this).css("background-color", "black");
 
+   alert("zelenim se");
+   
+   $("div").each(function(i) { 
+	    //if (i % 2) 
+		$(this).css("background-color", "green"); 
+	 }
+   );
+   
   }
  
 );
