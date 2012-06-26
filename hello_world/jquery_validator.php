@@ -1,15 +1,11 @@
 <?php 
 
-/*
-if (isset($_GET['ime'])) {
-	//echo "postiranje<br/>";
-	header("Location: " . $_SERVER["PHP_SELF"]);
-	echo "<script>alert('setovao header !');</script>";
-}  else {
-   echo "<script>alert('nije definisan _GET ?');</script>";
-}
-*/
 
+if (isset($_GET['ime'])) {
+	//echo "<script>alert('setovao header !');</script>";
+	//header("Location: " . $_SERVER["PHP_SELF"]);
+	
+}
 
 ?>
 
@@ -34,37 +30,35 @@ if (isset($_GET['ime'])) {
 <script type="text/javascript"  src="scripts/jquery/validation/languages/jquery.validationEngine-en.js"></script>
 
 <script type="text/javascript"  src="scripts/tiny_mce/tiny_mce.js"></script>
-<!-- 
+
 <script type="text/javascript"  src="scripts/tiny_mce/tiny_mce_init.js"></script>
--->
- 
 
 
 
 <script type="text/javascript">
 
+
 $(document).ready(function() { 
+
 
 	 $('#mainform').validationEngine();
 
-
+	 
 	 $('#mainform').submit(function() {
 	        var error = 0;
-	        var comment = $('#ta_komentar').val();
-	        
-	        //var comment = document.getElementById("ta_komentar").select();
-	        
+
+            //ovo radi za textarea ali ne radi kada je tinyMCE
+	        //var comment = $('#ta_komentar').val();
+
+	        var comment = tinyMCE.get('ta_komentar').getContent();
+	                
 	        if (comment == '') {
 	            error = 1;
 	            alert('Comment cannot be empty.');
-	        } 
-	        else {
-		        
+	        }  else {    
 		        alert('postavio hidden na vrijednost: ' + comment);
 		        //  postavi hidden input polje
 	        	$('#komentar_val').attr('value', comment);
-	        	
-	        	
 		    }
 
 	        if (error) {
@@ -85,6 +79,7 @@ function set_komentar_val() {
 
 //  postavi hidden input polje
 //$('#komentar_val').attr('value', comment);
+return true;
 		
 }
 
@@ -94,25 +89,25 @@ function set_komentar_val() {
 
 </head>
 
-<body>
+<body onload="<?php 
+if (!isset($_GET["ime"])) {
+
+	//echo "tinyMCE.activeEditor.setContent('hello world from tiny_mce');";
+	echo "tinyMCE.get('ta_komentar').setContent('hello world from tiny_mce');";
+		
+} else {
+	echo "tinyMCE.get('ta_komentar').setContent('" . $_GET["komentar_val"]  . "');";
+}
+?>">
 
 <h2>jQuery validation engine hello</h2>
 <hr/>
 
-<?php 
-if (isset($_GET["ime"])) {
-	echo  $_GET["komentar_val"];
-} else {
-   echo "... GET prazan nakon refresha ... ";
-}
 
-echo "<br/>"
+<form id="mainform"  method="get"  action="<?php echo $_SERVER['PHP_SELF']; ?>" > 
 
-?>
-
-<form id="mainform"  method="get"  action="<?php echo $_SERVER['PHP_SELF']; ?>"> 
-
-<formset title="formset 1">
+<fieldset>
+<legend>Fieldset 1</legend>
 <input type="text" id="ime" name="ime" class="input_field validate[required]"  value="Ime"></input>
 
 <br/>
@@ -124,13 +119,7 @@ echo "<br/>"
 <input type="hidden" id="komentar_val" name="komentar_val"></input>
 <br/>
 
-<textarea id="ta_komentar" onchange="set_komentar_val();"><?php 
-if (isset($_GET["komentar_val"])) {
-  echo $_GET["komentar_val"];
-} else {
-  echo "init vrijednost";
-}
-?></textarea>
+<textarea id="ta_komentar" onchange="set_komentar_val();" ></textarea>
 
 <input type="submit" name="salji" value="Pošalji sa hidden"></input>
 
@@ -138,10 +127,13 @@ if (isset($_GET["komentar_val"])) {
 <input type="button" id="btn1" name="btn1" value="dugme 1" onClick="alert('sta hoces ?');" ></input>
 -->
 
-</formset>
+</fieldset>
 
 </form>
 
+
+
 </body>
+	
 
 </html>
