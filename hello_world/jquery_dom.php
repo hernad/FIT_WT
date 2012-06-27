@@ -50,7 +50,7 @@
   
   
 <script>
-  var first_strong = $("strong").slice(2,3); 
+  var first_strong = $("strong").slice(2,3).clone(); 
   $("p").append( first_strong );
 
 
