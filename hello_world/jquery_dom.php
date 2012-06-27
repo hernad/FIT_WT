@@ -19,6 +19,7 @@
 <body>
   početak <strong>prvi strong</strong>
   <strong>Hello strong!!!</strong>
+  bla <strong>treći strong</strong>
   <p id="p0" >I would like to say: </p>
 
   <div></div>
@@ -28,10 +29,11 @@
   <div></div>
   
 <script>
-  //var first_strong = $("strong").first(); 
-  //$("p").append( first_strong );
+  var first_strong = $("strong").slice(2,3); 
+  $("p").append( first_strong );
+
   //$("p#p0").append( '<p id="new">new paragraph</p>' );
-  $("p#p0").add( '<p id="new">new paragraph</p>' );
+  //$("p#p0").add( '<p id="new">new paragraph</p>' );
 
 
   $("div").css("border", "2px solid red").append("<p>hello</p>").css("background", "yellow");
