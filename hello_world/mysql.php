@@ -1,3 +1,10 @@
+<html>
+
+<head>
+<meta charset="utf-8"/>
+
+</head>
+<body>
 <?php
 
 $host = "localhost";
@@ -31,4 +38,26 @@ while ($row = $result->fetch_object()) {
 }
 
 
+$stmt = $mysqli->stmt_init();
+$qry_update = "INSERT INTO autori(naziv, naziv_2) values(?, ?)";
+
+$stmt->prepare($qry_update);
+
+$naziv = $mysqli->real_escape_string("vako nako");
+$naziv_2 = $mysqli->real_escape_string("evo 'mene vamo");
+
+
+$stmt->bind_param('ss', $naziv, $naziv_2);
+
+if ($stmt->execute()) {
+  echo "<hr/><br/>";
+  echo "uspješno dodao  $naziv ; $naziv_2 / $stmt->affected_rows  <br/>";
+}
+
+$stmt->close();
+$mysqli->close();
+
 ?>
+</body>
+
+</html>
