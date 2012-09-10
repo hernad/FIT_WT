@@ -59,8 +59,8 @@ v0.5 7z](http://knowhow-erp-fmk.googlecode.com/files/xampp_all_in_one_0.5.7z)
 => c:\xampp
 
 
-2) u cmd promptu ukucati (ovo je sve jedna linija, samo uraditi
-copy-paste):
+2) u cmd promptu ukucati (ovo je sve jedna linija dugačka linija - ne
+vidi se kraj na ekranu, uraditi "naslijepo" copy-paste to console):
 
 <pre>
 c: & cd \xampp\htdocs & set PATH=c:\xampp;c:\xampp\mysql\bin;c:\xampp\ChromiumPortable;c:\xampp\eclipse-php;%PATH% &  c:\xampp\xampp-control.exe & echo podigni mysql server pa pritisni enter & pause & c:\xampp\eclipse-php\eclipse-php & c:\xampp\ChromiumPortable\Chromium http://localhost/hello_php & c:\xampp\mysql\bin\mysql -u root 
