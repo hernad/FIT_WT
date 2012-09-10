@@ -1,5 +1,5 @@
-WT development environment
-===========================
+WT PHP development environment
+====================================
 
 Uvod
 ----
@@ -40,10 +40,9 @@ konzole (chromium, gvim, mysql, eclipse-php)
 Za sve ovo motiviralo me je "eclipse-da-poludiš-]-podešenje-na
 bosanskoj" tastaturi.
 
-Kad si pritisnut vremenom, svaka te sitnica može izbaciti iz takta. Zato
-i ove "sitnice" zlata vrijede.
+Kad si pritisnut vremenom, svaka te sitnica može izbaciti iz takta. 
 
-Zato sam na eclipse-u podesio:
+Na eclipse-u podesio:
 - debug - XDebug (podešen xampp php.ini da radi out-of-box)
 - keyboard mapping kako treba
 
@@ -81,7 +80,6 @@ Znači imamo instalirane:
  - eclipse-php 3.0.2 (eclipse helios based)
  - chromium portable (22.0.1201.0)
  - gvim 7.2
-
 
 
 Bilješke
