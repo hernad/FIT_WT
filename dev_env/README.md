@@ -58,6 +58,9 @@ INSTALACIJA
 
 2) u cmd promptu ukucati:
 
+Prerequisite: Slobodni web portovi 80, 443, 3306 za XAMPP Apache web
+server, mysql server
+
 <pre>
 c: & cd \xampp\htdocs & set PATH=c:\xampp;c:\xampp\mysql\bin;c:\xampp\ChromiumPortable;c:\xampp\eclipse-php;%PATH% &  c:\xampp\xampp-control.exe & echo podigni mysql server pa pritisni enter & pause & c:\xampp\eclipse-php\eclipse-php &
 c:\xampp\ChromiumPortable\Chromium http://localhost/hello_php &
@@ -146,25 +149,16 @@ eclipse exe
 c:\xampp\eclipse-php\eclipse-php.exe
 
 
-
-
-
 Unbind "]"
 ----------
 
 ctrl+alt+G  - Find Text in workspace - unbindati
 
 
-
 Eclipse default podstavke
 -----------------------------
 
 XDebug debugger
-
-
-Bilješke
-===============================
-
 
 C:\xampp\htdocs\php
 -------------------
