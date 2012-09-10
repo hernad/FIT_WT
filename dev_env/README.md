@@ -68,6 +68,13 @@ c: & cd \xampp\htdocs & set PATH=c:\xampp;c:\xampp\mysql\bin;c:\xampp\ChromiumPo
 
  - Prerequisite: Slobodni web portovi 80, 443, 3306 za XAMPP Apache web server, mysql server
 
+Izvršenjem gornje komande pokreće se slijed komandi:
+ - xampp-control (nakon čega aktiviramo apache i mysql)
+ - pokreće se eclipse-php
+ - u chromiumu otvara hello-php projekat 
+ - pokreće mysql klijent
+ - podešava path za gvim, chromium
+
 Na kraju se dobija ovo:
 
 ![WT dev
