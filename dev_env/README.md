@@ -55,6 +55,10 @@ INSTALACIJA
 
 1) Sa 7zip otpakovati arhivu
 
+[xamp_all_in_one
+v0.5 7z](http://knowhow-erp-fmk.googlecode.com/files/xampp_all_in_one_0.5.7z)
+=> c:\xampp
+
 
 2) u cmd promptu ukucati:
 
