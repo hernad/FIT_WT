@@ -73,9 +73,9 @@ Na kraju se dobija ovo:
 desktop](https://raw.github.com/hernad/FIT_WT/master/dev_env/wt_win_dev_env.png)
 
 Znači imamo instalirane:
- - xampp 3.0.12 (php 5.3)
- - eclipse-php 3.0.2
- - chromium portable
+ - xampp 3.0.12 (php 5.3, mysql 5.5.25)
+ - eclipse-php 3.0.2 (eclipse helios based)
+ - chromium portable (22.0.1201.0)
  - gvim 7.2
 
 
