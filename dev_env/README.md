@@ -59,16 +59,16 @@ v0.5 7z](http://knowhow-erp-fmk.googlecode.com/files/xampp_all_in_one_0.5.7z)
 => c:\xampp
 
 
-2) u cmd promptu ukucati:
-
-Prerequisite: Slobodni web portovi 80, 443, 3306 za XAMPP Apache web
-server, mysql server
+2) u cmd promptu ukucati (ovo je sve jedna linija, samo uraditi
+copy-paste):
 
 <pre>
 c: & cd \xampp\htdocs & set PATH=c:\xampp;c:\xampp\mysql\bin;c:\xampp\ChromiumPortable;c:\xampp\eclipse-php;%PATH% &  c:\xampp\xampp-control.exe & echo podigni mysql server pa pritisni enter & pause & c:\xampp\eclipse-php\eclipse-php &
 c:\xampp\ChromiumPortable\Chromium http://localhost/hello_php &
 C:\xampp\mysql\bin\mysql -u root 
 </pre>
+
+ - Prerequisite: Slobodni web portovi 80, 443, 3306 za XAMPP Apache web server, mysql server
 
 Na kraju se dobija ovo:
 
