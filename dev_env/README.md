@@ -192,7 +192,9 @@ Sadrži:
  * [jquery cheat sheet
 1.4](http://labs.impulsestudios.ca/downloads/impulse_studios-jquery_cheat_sheet-1.0.pdf)
  * javascript cheat sheet
- * php.net manual za aktuelnu verziju (5.4.x) u chm formatu 
+ * css 3 cheat sheet
+ * css 2.1 cheat sheet
+ * php.net manual (5.4.x) u chm formatu 
 
 
 Napomena:
