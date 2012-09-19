@@ -183,15 +183,25 @@ zend_extension = "C:\xampp\php\ext\php_xdebug.dll"
 
 xdebug.remote_enable = 1
 
-TODO
+DOCS
 =========
 
-Ovdje bi još bilo super dodati 
+[WT_docs arhiva](http://knowhow-erp-fmk.googlecode.com/files/WT_docs.7z)
 
-doc/ sekciju u koju bi se stavili reference cards & cheat sheets kao što
-su:
- 
-http://labs.impulsestudios.ca/downloads/impulse_studios-jquery_cheat_sheet-1.0.pdf
+Sadrži:
+ * [jquery cheat sheet
+1.4](http://labs.impulsestudios.ca/downloads/impulse_studios-jquery_cheat_sheet-1.0.pdf)
+ * javascript cheat sheet
+ * php.net manual za aktuelnu verziju (5.4.x) u chm formatu 
 
-http://refcardz.dzone.com/
+
+Napomena:
+
+refcards sa dzone  http://refcardz.dzone.com/ su odlična i free za
+download. Međutim, nije ih dozvoljeno distribuirati na ovaj način pa
+nisu uvrštena.
+
+Update:
+
+s obzirom da
 
