@@ -183,3 +183,15 @@ zend_extension = "C:\xampp\php\ext\php_xdebug.dll"
 
 xdebug.remote_enable = 1
 
+TODO
+=========
+
+Ovdje bi još bilo super dodati 
+
+doc/ sekciju u koju bi se stavili reference cards & cheat sheets kao što
+su:
+ 
+http://labs.impulsestudios.ca/downloads/impulse_studios-jquery_cheat_sheet-1.0.pdf
+
+http://refcardz.dzone.com/
+
