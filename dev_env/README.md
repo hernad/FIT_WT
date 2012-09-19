@@ -203,7 +203,3 @@ refcards sa dzone  http://refcardz.dzone.com/ su odlična i free za
 download. Međutim, nije ih dozvoljeno distribuirati na ovaj način pa
 nisu uvrštena.
 
-Update:
-
-s obzirom da
-
