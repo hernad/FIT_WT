@@ -199,8 +199,7 @@ download. Međutim, nije ih dozvoljeno distribuirati na ovaj način pa
 nisu uvrštena.
 
 
-BUGS
+CHANGELOG
 =========
 
-2012-09-21 uočio sam da na gvim-u ne radi backspace kako treba. 
-Očigledno nešto nije dobro u vim config fajlovima koji se učitavaju, 
+ - v0.7: 2012-09-21 gvim _vimrc ispravljen, dodan notepad++ (npp)
