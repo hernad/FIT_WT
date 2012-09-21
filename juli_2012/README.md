@@ -1,1 +1,1 @@
-[login](juli_2012/login.png)
+[login](https://github.com/hernad/FIT_WT/blob/master/juli_2012/login.png)
