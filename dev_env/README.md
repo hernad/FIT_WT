@@ -1,5 +1,5 @@
-WT PHP development environment
-====================================
+WT PHP development environment (v0.7)
+=====================================
 
 Uvod
 ----
@@ -52,18 +52,14 @@ Takođe, uzeo sam aktuelno 3.0.2 eclipse-PHP okruženje.
 INSTALACIJA
 ============
 
-1) Sa 7zip otpakovati arhivu
+1) Sa 7zip otpakovati arhivu na lokaciju: c:\xampp
 
-[xamp_all_in_one
-v0.5 7z](http://knowhow-erp-fmk.googlecode.com/files/xampp_all_in_one_0.5.7z)
-=> c:\xampp
+[xamp_all_in_one v0.7z](http://knowhow-erp-fmk.googlecode.com/files/xampp_all_in_one_0.7.7z)
 
-
-2) u cmd promptu ukucati (ovo je sve jedna linija dugačka linija - ne
-vidi se kraj na ekranu, uraditi "naslijepo" copy-paste to console):
+2) u cmd promptu pokrenuti 
 
 <pre>
-c: & cd \xampp\htdocs & set PATH=c:\xampp;c:\xampp\mysql\bin;c:\xampp\ChromiumPortable;c:\xampp\eclipse-php;%PATH% &  c:\xampp\xampp-control.exe & echo podigni mysql server pa pritisni enter & pause & c:\xampp\eclipse-php\eclipse-php & c:\xampp\ChromiumPortable\Chromium http://localhost/hello_php & c:\xampp\mysql\bin\mysql -u root 
+c:\xampp\run_wt.bat
 </pre>
 
  - Prerequisite: Slobodni web portovi 80, 443, 3306 za XAMPP Apache web server, mysql server
@@ -74,19 +70,18 @@ Izvršenjem gornje komande izvršavaju se sljedeće operacije:
  3. pokreće se eclipse-php
  4. u chromiumu otvara hello-php projekat 
  5. pokreće mysql klijent
- 6. podešava se PATH  za gvim, chromium
+ 6. podešava se PATH  za gvim, npp, chromium
 
 Na kraju se dobija ovo:
 
-![WT dev
-desktop](https://raw.github.com/hernad/FIT_WT/master/dev_env/wt_win_dev_env.png)
+![WT dev desktop](https://raw.github.com/hernad/FIT_WT/master/dev_env/wt_win_dev_env.png)
 
 Znači imamo instalirane:
  1. xampp 3.0.12 (php 5.3, mysql 5.5.25)
  2. eclipse-php 3.0.2 (eclipse helios based)
  3. chromium portable (22.0.1201.0)
  4. gvim 7.2
-
+ 5. notepad++ (npp)
 
 Bilješke
 ==============
@@ -94,7 +89,6 @@ Bilješke
 xampp:
 ---------
 c:\xampp\xamp-control.exe
-
 
 eclipse:
 ----------
@@ -129,14 +123,15 @@ PATH
 ====
 
 <pre>
-set PATH=c:\xampp;c:\xampp\mysql\bin;c:\xampp\ChromiumPortable;c:\xampp\eclipse-php;%PATH%
+set PATH=c:\xampp;c:\xampp\npp;c:\xampp\mysql\bin;c:\xampp\ChromiumPortable;c:\xampp\eclipse-php;%PATH%
 </pre>
 
 dostupne komande nakon podešenja path-a: 
 
- - mysql
- - eclipse-php
- - gvim
+ - mysql (mysql klijent)
+ - eclipse-php (eclipse IDE)
+ - gvim (vim programming editor)
+ - npp (notepad++ programming editor)
 
 
 XAMPP
