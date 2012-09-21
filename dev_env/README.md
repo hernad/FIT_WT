@@ -203,3 +203,7 @@ refcards sa dzone  http://refcardz.dzone.com/ su odliÄna i free za
 download. MeÄ‘utim, nije ih dozvoljeno distribuirati na ovaj naÄin pa
 nisu uvrÅ¡tena.
 
+BUGS
+=========
+
+2012-09-21 uoèio sam da na gvim-u ne radi backspace kako treba. Oèigledno nešto nije dobro u vim config fajlovima koji se uèitavaju, 
