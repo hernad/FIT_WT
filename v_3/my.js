@@ -8,9 +8,8 @@ CookieUtils.create = function(name, value, days) {
 	date.setTime(date.getTime() + days * 1000 * 60 * 60 * 24);
 	var ex = "expires=" + date.toUTCString();
 	
-	
 	document.cookie = str + "; " + ex + "; path=/";
-}
+};
 
 CookieUtils.cookies = {};
 
@@ -136,17 +135,11 @@ function create_form()
 	
 // inject a form dynamically
 var frm = $('<form/>', {
-    id: 'formId'
-
-    /*
-    ,
-    html: $('<input/>', {
-        class: "input",
-        id: "btn_insert",
-        type: 'button',
-        value: 'INSERT'
+    id: 'contactForm',
+    html: $('<h3>Contact form:</h3>', {
+      
     })
-    */
+   
 });
 
 $("#frm1").append(frm);
@@ -157,7 +150,7 @@ var lbl = $("<label>Ime:</label>", {
 	id: "l_ime",
 	class: "label"
 });
-lbl.insertAfter("#formId");
+lbl.insertAfter("#contactForm h3");
 
 var inp = $('<input/>', {
     "class": "input",
@@ -211,7 +204,7 @@ inp_3.insertAfter(lbl_3);
 
 // ---------- DUGME -----------------------
 var btn_insert = $('<input/>', {
-    class: "input",
+    class: "button",
     id: "btn_insert",
     type: 'button',
     value: 'Dodaj'

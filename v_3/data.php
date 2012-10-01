@@ -100,7 +100,7 @@ class DataUsersÊ{
 	
 	public function get_user($id) {
 		
-		$qry = "SELECT name, phone FROM directory 
+		$qry = "SELECT name, phone, ptt FROM directory 
 				WHERE id=?" ;
 		
 		$this->last_query = $qry;
@@ -111,8 +111,8 @@ class DataUsersÊ{
 		$s->bind_param("i", $id);
 		
 		
-		$ret = array(name => "", phone => "");
-		$s->bind_result($ret["name"], $ret["phone"]);
+		$ret = array();
+		$s->bind_result($ret["name"], $ret["phone"], $ret["ptt"]);
 		
 		$s->execute();
 		if ($s->fetch())
