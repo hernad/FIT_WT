@@ -54,7 +54,7 @@ function fill_select_with_months(select)
 	for ( var i = 0; i < months.length; i++) {
 		
 		var attribs = {};
-	    attribs.value = i+1;
+		attribs.value = i+1;
 		attribs.html = months[i];
 		
 		var opt = $('<option/>', attribs);

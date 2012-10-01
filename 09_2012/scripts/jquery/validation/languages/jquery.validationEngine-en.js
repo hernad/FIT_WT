@@ -131,7 +131,7 @@
                 },
                 "ajaxNameCall": {
                     // remote json service location
-                    "url": "ajaxValidateFieldName",
+                    "url": "valid.php",
                     // error
                     "alertText": "* This name is already taken",
                     // if you provide an "alertTextOk", it will show as a green prompt when the field validates
@@ -139,6 +139,18 @@
                     // speaks by itself
                     "alertTextLoad": "* Validating, please wait"
                 },
+                
+                "ajaxValid": {
+                    // remote json service location
+                    "url": "valid.php",
+                    // error
+                    "alertText": "* validacija1 neuspjesna",
+                    // if you provide an "alertTextOk", it will show as a green prompt when the field validates
+                    "alertTextOk": "",
+                    // speaks by itself
+                    "alertTextLoad": "* Validating, please wait"
+                },
+                
 				 "ajaxNameCallPhp": {
 	                    // remote json service location
 	                    "url": "phpajax/ajaxValidateFieldName.php",
