@@ -8,4 +8,9 @@ include_once 'header.php';
 
 <?php
 include_once 'footer.php';
+
+$a=1;
+$b=$a + 1;
+
+echo "$a,$b";
 ?>
