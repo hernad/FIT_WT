@@ -10,10 +10,17 @@ class Request {
 
 	function __construct() {
 
-		$this->data = new DataUsersÊ();
+		$this->data = new DataUsers();
 
 	}
 
+	function __destruct() {
+		
+		$this->data->statement->close();
+		$this->data->server->close();
+		
+	}
+	
 	function handle_request() {
 		
 		if (!isset($_REQUEST["req"]))
@@ -41,16 +48,16 @@ class Request {
 		
 		$rec = json_decode($_REQUEST["rec"], TRUE);
 		
-		if ($this->debug) {
-			echo "json_decode:";
-			var_dump($rec);
+		if ($this->data->log) {
+			//echo "json_decode:";
+			error_log(var_export($rec, TRUE));
 		}
 		
 		
 		$this->data->insert($rec);
 		$last = $this->data->insert_id();
 		
-		$ret = ARRAY( id => $last);
+		$ret = ARRAY( "id" => $last);
 		
 		header('Content-Type: application/json');
 		
@@ -76,7 +83,6 @@ class Request {
 		}
 		
 		
-	
 		if ($this->data->debug) {
 			echo "json_decode:";
 			var_dump($rec);

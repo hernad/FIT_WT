@@ -83,12 +83,7 @@ CookieUtils.read();
 write_to_console("test2 " + CookieUtils.cookies.test2);
 write_to_console("test 1" + CookieUtils.cookies.test1);
 
-
 }
-
-//debugger;
-
-
 
 
 $(document).ready(function () {
@@ -97,38 +92,56 @@ $(document).ready(function () {
 	
 	$("#btn_insert").click( function() {
 
-    /*		
-    var today = new Date();
-    var txt = today + " the form is submited";
-    */
 	
-	var rec = {};
-	rec.name = $("#txt_name").val();
-	rec.phone = $("#txt_phone").val();
-	rec.ptt = Number($("#txt_ptt").val());
-	
-	var request = {};
-	request.rec = JSON.stringify(rec);
-	request.req = "insert";
-	
-	$.post("data_service.php", request, function(data, status) {
-		write_to_console("request poslan" + JSON.stringify(request));
+		var rec = {};
+		rec.name = $("#txt_name").val();
+		rec.phone = $("#txt_phone").val();
+		rec.ptt = Number($("#txt_ptt").val());
 		
-		var response;
-		try {
-			response = JSON.parse(data);
-			response.errorr = "";
-		} catch (e) {
-			response = {error: data};
-		}
-		write_to_console("primljen odgovor" + JSON.stringify(response) + " status: " + status);
-	});
+		var request = {};
+		request.rec = JSON.stringify(rec);
+		request.req = "insert";
+		
+		write_to_console("request poslan" + JSON.stringify(request));
+		$.post("data_service.php", request, insert_callback);
+		
+		function insert_callback(data, status) {
+			
+		    // debugger;
 	
+			var response = {};
+			try {
+				if (typeof(data) === "object") {
+					response = data;
+				} else {
+					response = JSON.parse(data);
+				}
+				response.error = "";
+				    
+					
+			} catch (e) {
+				response = {id: -1, error: data};
+			}
+			
+			write_to_console("primljen odgovor" + JSON.stringify(response) + " status: " + status);
+			
+			if (response.id > 0) {
+				
+				// resetuje vrijednosti svih polja
+				$("#contactForm").each(function(){
+				    this.reset();	
+				});
+			}
+			
 
-    return false;
+	    }
+	    
+	    return true;
 	});
 
 });
+
+
 
 function create_form()
 {
@@ -220,5 +233,43 @@ $("<br/>").insertBefore(btn_insert);
 write_to_console("ok");
 
 set_cookie();
+
+}
+
+
+function create_tabela()
+{
+	
+var table_div = $("#tabela");
+
+
+	
+var table = $("<table/>", {border: "0"});
+
+	
+var first_row = $(table).append("<tr><td>Name:</td><td>Phone:</td></tr>");
+	
+$.getJSON("test.php", function(json) {
+		
+	    debugger;
+		for(var i=0; i < json.length; i++) {
+		
+			var row = $("<tr>", { id: "row_" + (i+1).toString(), class: "table_row" });
+			
+			var attribs = { html: json[i].name };
+			var col_name = $("<td>", attribs );
+			$(row).append(col_name);
+			
+			var attribs = { html: json[i].phone };
+			var col_phone = $("<td>", attribs )
+			$(row).append(col_phone);
+			
+			$(table).append(row);
+		}
+	    	
+	});
+
+    $(table_div).empty();
+	$(table_div).append(table);	
 
 }
