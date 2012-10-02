@@ -154,4 +154,51 @@ label {
 	background-color: transparent;
 }
 
+#tabela {
+	/*background: red;*/
+	height: 220px;
+}
+#tabela table {
+    /* position: relative;*/
+    /*display: inline;*/
+    display: table;
+    left: 0;
+    right: 0;
+    /*top: 10%;
+    bottom: 10%;*/
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-top: 10%;*/
+	width: 80%;
+	/* background: red;*/
+}
 
+#tabela td {
+	line-height: 1.2em;
+	padding: 0.3em;
+	border: solid 1px black;
+}
+
+
+
+
+#tabela tr:nth-child(odd) {
+	
+	background-color: #CCCCCC;
+}
+
+#tabela tr:nth-child(even) {
+	
+	background-color: gold;
+
+}
+
+#tabela tr:first-child {
+	
+	background-color: green;
+	text-align: center;
+	color: white;
+}

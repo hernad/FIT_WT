@@ -140,15 +140,17 @@ class DataUsers{
 		$this->statement->prepare($query);
 		$this->statement->bind_param("ii", $offset, $limit);
 		
-		$row = array();
-		$this->statement->bind_result($row["id"], $row["name"], $row["phone"], $row["ptt"] );
+		
+		$this->statement->bind_result($id, $name, $phone, $ptt );
+		
 		$this->statement->execute();
 	    $this->statement->store_result();
 	   
 	    
 	    $ret = array();
-	    while ($this->statement->fetch())
-	         $ret[] = $row;
+	    while ($this->statement->fetch()) {
+	         $ret[] = array( "id" => $id, "name" => $name, "phone" => $phone, "ptt" => $ptt);
+	    }
 	    
 	    return json_encode($ret);
 	    

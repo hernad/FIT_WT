@@ -13,13 +13,51 @@
 
 <title>test</title>
 
+<script>
+
+$(document).ready(function () {
+
+	var table = $("<table/>", {border: "0"});
+	
+	var first_row = $(table).append("<tr><td>Name:</td><td>Phone:</td></tr>");
+
+	$.getJSON("test.php", function(json) {
+		
+		for(var i=0; i < json.length; i++) {
+		
+			var row = $("<tr>", { id: "row_" + (i+1).toString(), class: "table_row" });
+			
+			var attribs = { html: json[i].name };
+			var col_name = $("<td>", attribs );
+			$(row).append(col_name);
+			
+			var attribs = { html: json[i].phone };
+			var col_phone = $("<td>", attribs )
+			$(row).append(col_phone);
+			
+			$(table).append(row);
+		}
+	    	
+	});
+	
+	$("#tabela").append(table);
+
+});
+
+</script>
+
+
 </head>
 
 <body>
 
 hello world
 <div id="frm1"></div>
+
+<div id="tabela"></div>
+
 <div id="console"></div>
+
 
 </body>
 
