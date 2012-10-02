@@ -77,3 +77,61 @@ body {
     margin-left: 200px;
 	margin-bottom: 10px;
 }
+
+
+
+/* register */
+
+.box_reg {
+   margin: 100px auto auto auto;
+   border: solid 1px #CCCCCC;
+   width: 650px;
+   border-radius: 5px;
+   background: transparent;
+}
+
+.box_reg_header {
+   background: white;
+}
+
+.box_reg_header_img {
+   margin-left: 12px;
+   margin-top: 2px;
+   margin-right: 8px;
+   margin-bottom: 10px;   
+   float: left;
+}
+
+.box_reg_header_right {
+   margin-left: 8px;
+   margin-top: 2px;
+   background: white;
+}
+
+.box_reg_body {
+   clear: left;
+   background: #CCCCCC;
+}
+
+.box_reg_body select {
+	
+	border: solid 2px white;
+	border-radius: 0px;
+}
+
+.box_reg_button {
+   margin-left: 200px;
+   margin-top: 20px;
+   background-color: #CCCCCC;
+   padding-bottom: 20px;
+}
+
+.box_reg_button > input[type=submit] {
+	
+	background-color: violet;
+	color: white;
+	width: 80px;
+	text-align: center;
+}
+
+
