@@ -68,7 +68,9 @@ body {
 	background-color: violet;
 	color: white;
 	width: 80px;
+	padding: 3px;
 	text-align: center;
+	border: black solid 1px;
 }
 
 .form_link_bottom {
@@ -129,9 +131,11 @@ body {
 .box_reg_button > input[type=submit] {
 	
 	background-color: violet;
+	border: black solid 1px;
 	color: white;
 	width: 80px;
 	text-align: center;
+	padding: 3px;
 }
 
 
