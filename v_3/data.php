@@ -110,7 +110,6 @@ class DataUsers{
 		
 		$s->bind_param("i", $id);
 		
-		
 		$ret = array();
 		$s->bind_result($ret["name"], $ret["phone"], $ret["ptt"]);
 		
@@ -154,6 +153,44 @@ class DataUsers{
 	    
 	    return json_encode($ret);
 	    
+	}
+	
+	public function max_id() {
+		
+		$qry = "SELECT max(id) as max FROM directory"; 
+		$this->last_query = $qry;
+		
+		$s = $this->statement;
+		$s ->prepare($qry);
+		
+	
+		$s->bind_result($max);
+		
+		$s->execute();
+		if ($s->fetch())
+			return $max;
+		else
+			return -1;
+		
+	}
+	
+	public function count() {
+	
+		$qry = "SELECT count(*) FROM directory";
+		$this->last_query = $qry;
+	
+		$s = $this->statement;
+		$s ->prepare($qry);
+	
+	
+		$s->bind_result($count);
+		$s->execute();
+		
+		if ($s->fetch())
+			return $count;
+		else
+			return -1;
+	
 	}
 	
 	public function test() {		

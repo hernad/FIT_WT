@@ -17,12 +17,38 @@
 
 $(document).ready(function () {
 
-create_tabela();
+	var last_max_count = "";
+	
+	
+	
+	function refresh_tabela(fn) {
+	
+		request = {};
+		request.rec = JSON.stringify({});
+		request.req = "max_count";
+		
+	
+		
+		$.get("data_service.php", request, function(data, status) {
+			
+			debugger;
+			if (typeof(data) === "string")
+			    data = JSON.parse(data);
+			
+			var read_max_count = data.max_id.toString() + "#" + data.count.toString();
+			
+			if (read_max_count !== last_max_count) {
+				last_max_count = read_max_count;
+				create_tabela();
+			}
+		});
+		
+	};
+	
 
-
-setInterval(function(){
-	create_tabela();
-}, 5000);
+	setInterval(function(){
+		refresh_tabela();
+	}, 5000);
 
 	
 

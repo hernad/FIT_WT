@@ -2,7 +2,12 @@
 
 include 'data.php';
 
-
+if (!isset($_COOKIE["last_insert_id"]))
+{
+  // 1 dan
+  $expires = time() + 1*60*60*24;
+  setcookie("last_insert_id", -1, $expires);
+}
 
 class Request {
 
@@ -36,6 +41,10 @@ class Request {
 			case "get":
 				$this->get_request();
 				break;
+
+			case "max_count":
+				$this->max_count_request();
+				break;
 				
 			default:
 			    break;
@@ -57,6 +66,9 @@ class Request {
 		$this->data->insert($rec);
 		$last = $this->data->insert_id();
 		
+		$_COOKIE["last_insert_id"] = $last;
+		
+		
 		$ret = ARRAY( "id" => $last);
 		
 		header('Content-Type: application/json');
@@ -67,6 +79,21 @@ class Request {
 		
 	}
 	
+	
+	function max_count_request() {
+		
+		
+		$max = $this->data->max_id();
+		$count = $this->data->count();
+		
+		$ret = array("max_id" => $max, "count" => $count);
+		
+		error_log("max_count_request ret:" + var_export($ret, TRUE));
+		$rec = json_encode($ret);
+		
+		echo $rec;
+	}
+ 	
 	
 	function get_request() {
 	

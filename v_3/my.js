@@ -106,8 +106,7 @@ $(document).ready(function () {
 		$.post("data_service.php", request, insert_callback);
 		
 		function insert_callback(data, status) {
-			
-		    // debugger;
+
 	
 			var response = {};
 			try {
@@ -144,8 +143,7 @@ $(document).ready(function () {
 
 
 function create_form()
-{
-	
+{	
 // inject a form dynamically
 var frm = $('<form/>', {
     id: 'contactForm',
@@ -241,8 +239,6 @@ function create_tabela()
 {
 	
 var table_div = $("#tabela");
-
-
 	
 var table = $("<table/>", {border: "0"});
 
