@@ -11,16 +11,16 @@ if  (! ( isset($_GET["create"]) && ($_GET["create"]=="1") ))
 	
 include 'data.php';
 
-$d = new DataUsersÊ();
+$d = new DataUsers();
 $d->debug = true;
 
 $d->test();
 $d->create_tables();
 
-$rec = array( name => "ernad", phone => "1111", ptt => 72000);
+$rec = array( "name" => "ernad", "phone" => "1111", "ptt" => 72000);
 $d->insert($rec);
 
-$rec = array( name => "ernad2", phone => "2222", ptt => 73000);
+$rec = array( "name" => "ernad2", "phone" => "2222", "ptt" => 73000);
 $d->insert($rec);
 
 $ret = $d->get_user(1);

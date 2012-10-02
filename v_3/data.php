@@ -1,7 +1,7 @@
 <?php
 
 
-class DataUsersÊ{
+class DataUsers{
 
 	public $server;
 	public $statement;
@@ -131,6 +131,27 @@ class DataUsersÊ{
 		//$qrez = $this->run_query("SELECT last_insert_id() as last");
 		return $this->server->insert_id;
 		
+	}
+	
+	public function get_users_json($offset = 0, $limit = 100000) {
+
+	
+		$query = "select id, name, phone, ptt from directory order by name limit ?, ?";
+		$this->statement->prepare($query);
+		$this->statement->bind_param("ii", $offset, $limit);
+		
+		$row = array();
+		$this->statement->bind_result($row["id"], $row["name"], $row["phone"], $row["ptt"] );
+		$this->statement->execute();
+	    $this->statement->store_result();
+	   
+	    
+	    $ret = array();
+	    while ($this->statement->fetch())
+	         $ret[] = $row;
+	    
+	    return json_encode($ret);
+	    
 	}
 	
 	public function test() {		
