@@ -23,10 +23,13 @@ class Request {
 	
 	function set_last_insert_id($id = -1) {
 		
+		// ako je cookie postoji i prosljedjujemo -1, ignorisi
+		if ( isset($COOKIE["last_insert_id"]) && ($id == -1) )
+		        return;
 		
 		$expires = time() + 1*60*60*24;
 		setcookie("last_insert_id", $id, $expires);
-		
+	    
 		
 	}
 	
@@ -43,7 +46,7 @@ class Request {
 			   break;
 			
 			case "get":
-				$this->get_request();
+				$this->get_user_request();
 				break;
 
 			case "max_count":
@@ -86,8 +89,7 @@ class Request {
 	
 	
 	function max_count_request() {
-		
-		
+			
 		$max = $this->data->max_id();
 		$count = $this->data->count();
 		
@@ -99,8 +101,7 @@ class Request {
 		echo $rec;
 	}
  	
-	
-	function get_request() {
+	function get_user_request() {
 	
 		// http://localhost/jquery/data_service.php
 		// ?req=get&rec={%22id%22:1}
