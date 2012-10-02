@@ -130,6 +130,9 @@ $(document).ready(function () {
 				$("#contactForm").each(function(){
 				    this.reset();	
 				});
+				
+				CookieUtils.read();
+				alert("last insert id = " + CookieUtils.cookies["last_insert_id"]);
 			}
 			
 

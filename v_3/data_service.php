@@ -2,12 +2,6 @@
 
 include 'data.php';
 
-if (!isset($_COOKIE["last_insert_id"]))
-{
-  // 1 dan
-  $expires = time() + 1*60*60*24;
-  setcookie("last_insert_id", -1, $expires);
-}
 
 class Request {
 
@@ -17,12 +11,22 @@ class Request {
 
 		$this->data = new DataUsers();
 
+		$this->set_last_insert_id();
 	}
 
 	function __destruct() {
 		
 		$this->data->statement->close();
 		$this->data->server->close();
+		
+	}
+	
+	function set_last_insert_id($id = -1) {
+		
+		
+		$expires = time() + 1*60*60*24;
+		setcookie("last_insert_id", $id, $expires);
+		
 		
 	}
 	
@@ -66,7 +70,8 @@ class Request {
 		$this->data->insert($rec);
 		$last = $this->data->insert_id();
 		
-		$_COOKIE["last_insert_id"] = $last;
+		$this->set_last_insert_id($last);
+		//$_COOKIE["last_insert_id"] = $last;
 		
 		
 		$ret = ARRAY( "id" => $last);
