@@ -81,6 +81,18 @@ body {
 }
 
 
+.box_login_error_box {
+	margin-top: 20px;
+	margin-left: 8px;
+	margin-right: 10px;
+	margin-bottom: 12px;
+	width: 92%;
+	padding: 4px 4px 4px 8px;
+	border: solid 2px pink;
+	background-color: #CCCCCC;
+}
+
+
 
 /* register */
 

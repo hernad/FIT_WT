@@ -16,9 +16,17 @@ include "header.php";
 <div class="box_login">
 
    <h2>Facebook login:</h2>
- 
+
    <div class="box_login_sub">
-   
+
+      <div style="display:block;" class="box_login_error_box">
+          <b>Incorrect user name</b><br/>
+          <div style="margin-top:5px; margin-bottom:5px; font-size:small;">
+          Opis poruke<br/>
+          Dodatna recenica.
+          </div>
+      </div>
+      
       <div class="form_row">
          <label>Label 1</label>
          <input type="text" value="" />
