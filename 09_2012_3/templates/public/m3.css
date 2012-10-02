@@ -1,0 +1,79 @@
+@CHARSET "UTF-8";
+
+body {
+	
+	font-family: sans-serif;
+}
+
+.box_login {
+	width: 600px;
+	background-color: white;
+	border: 2px solid #CCCCCC;
+	border-radius: 5px 5px 5px 5px;
+	
+	margin: 200px auto auto auto;
+	
+	
+	
+}
+
+.box_login h2 {
+	margin-left: 8px;
+	font-size: 18px;
+}
+.box_login_sub {
+	border-top: 2px solid #CCCCCC;
+	margin-left: 8px;	
+}
+
+.form_row {
+	padding: 2px; 
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+.form_row > label {
+	
+	display: block; /* bez ovoga width ne vrijedi*/
+	width: 180px;
+	
+	margin-top: 2px;
+	margin-right: 5px;
+	
+	float: left; /* bez ovoga input ide u donji red*/
+	
+	text-align: right;
+	font-size: 12px;
+	padding: 3px;
+	
+}
+
+.form_row > input {
+	
+	/*display: block;*/
+	width: 260px;
+	font-size: 12px;
+	padding: 3px;
+	
+}
+
+.form_buttons {
+	font-size: small;
+	margin-top: 7px;
+	margin-left: 200px;
+}
+
+.form_buttons > input[type=submit] {
+	
+	background-color: violet;
+	color: white;
+	width: 80px;
+	text-align: center;
+}
+
+.form_link_bottom {
+	font-size: small;
+    margin-top: 7px;
+    margin-left: 200px;
+	margin-bottom: 10px;
+}
