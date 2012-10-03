@@ -46,8 +46,14 @@ function valid_1(field) {
    if (! value.match(/^\d+/)) {
 	   
 		 var r = "moraju biti brojevi";
-		 //div.empty();
+		 div.empty();
 		 div.prepend(new Date() + " : " + r + "<br/>");
+
+		 /*
+		 $("#form_login").validationEngine('detach');
+		 field.focus();
+		 $("#form_login").validationEngine('attach');
+		 */
    }
 
    
