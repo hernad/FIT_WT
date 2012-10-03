@@ -8,6 +8,20 @@ include "header.php";
 
 ?>
 
+<script>
+
+$(document).ready(function() {
+   console.log("login_3.php start");
+
+   var box = $(".box_login_error_box")
+   console.log(box.size());
+
+   box.css("display", "none");
+   	
+});
+
+</script>
+
 </header>
 
 
